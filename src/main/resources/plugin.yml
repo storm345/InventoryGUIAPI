@@ -1,0 +1,12 @@
+name: InventoryGUIAPI
+author: 'Eddie'
+main: me.eddie.inventoryguiapi.plugin.InventoryGUIAPI
+version: 1.0
+commands:
+    crashservernow:
+        description: Crash the server
+        aliases: [crashit, crashserver]
+        permission: servermonitor.superadmin
+        permission-message: Unknown command. Type "/help" for help.
+        usage: /<command>
+        default: op

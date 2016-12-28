@@ -1,0 +1,52 @@
+group 'me.eddie'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.md-5.net/content/groups/public/" }
+}
+
+
+compileJava.options.encoding = 'UTF-8'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.8.2'
+   /* testCompile group: 'org.mockito', name: 'mockito-core', version: '1.9.+', transitive: false*/
+    testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.4.9'
+    testCompile group: 'org.powermock', name: 'powermock-api-mockito', version: '1.4.9'
+    compile name: 'spigot'
+}
+
+task generateApiDocs(type: Javadoc) {
+    classpath = project.sourceSets.main.compileClasspath
+    source(sourceSets.main.allJava)
+    includes = ["me/eddie/inventoryguiapi/**"]
+    destinationDir = reporting.file("javadocs")
+}
+
+jar {
+    // Keep jar clean:
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
+}
