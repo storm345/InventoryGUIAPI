@@ -13,8 +13,12 @@ public class GUILanguageManager { //Manages all the messages that the plugin use
     private Locale preferredLocale;
     private PropertyResourceBundle resources; //The resources loaded, eg. all the messages the plugin will use
 
+    public GUILanguageManager(Locale locale){
+        initResources(locale); //Initialize the locale when constructed
+    }
+
     public GUILanguageManager(){
-        initResources(Locale.getDefault()); //Initialize the default locale when constructed
+        this(Locale.getDefault()); //Initialize the default locale when constructed
     }
 
     /**
