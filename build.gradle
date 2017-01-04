@@ -21,7 +21,6 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" } //Says snapshots but is the official repo for building plugins against
-    maven { url "https://raw.github.com/rlf/uSkyBlock/mvn-repo/" }
 }
 
 
