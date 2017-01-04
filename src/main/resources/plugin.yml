@@ -2,10 +2,3 @@ name: InventoryGUIAPI
 author: 'Eddie'
 main: me.eddie.inventoryguiapi.plugin.InventoryGUIAPI
 version: 1.0
-commands:
-    testguis:
-        description: Test GUIs
-        aliases: [testgui, guitest]
-        permission: inventoryguiapi.test
-        usage: /<command>
-        default: op

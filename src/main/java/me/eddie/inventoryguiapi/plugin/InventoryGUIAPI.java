@@ -26,8 +26,6 @@ public class InventoryGUIAPI extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new BukkitEventListener(), this);
 
-        getCommand("testguis").setExecutor(new TestCommandExecutor());
-
         getLogger().info(languageManager.getFormattedString("plugin.startup", getName()));
     }
 

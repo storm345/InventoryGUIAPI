@@ -54,5 +54,5 @@ task generateApiDocs(type: Javadoc) {
 jar {
     // Keep jar clean:
     exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
-    /*exclude 'me/eddie/inventoryguiapi/examples'*/
+    exclude 'me/eddie/inventoryguiapi/examples'
 }
