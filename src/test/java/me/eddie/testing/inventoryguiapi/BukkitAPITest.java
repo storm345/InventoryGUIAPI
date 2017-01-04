@@ -1,5 +1,6 @@
 package me.eddie.testing.inventoryguiapi;
 
+import junit.framework.Assert;
 import me.eddie.inventoryguiapi.plugin.InventoryGUIAPI;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.junit.Test;
@@ -16,6 +17,6 @@ public class BukkitAPITest {
     public void testPluginValidity(){
         //This asserts that our plugin class is a JavaPlugin. This is an easy way to check that spigot is in the build path correctly
         InventoryGUIAPI pluginClass = PowerMockito.mock(InventoryGUIAPI.class);
-        assert pluginClass instanceof JavaPlugin;
+        Assert.assertTrue(pluginClass instanceof JavaPlugin);
     }
 }

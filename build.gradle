@@ -20,7 +20,8 @@ repositories {
     }
     mavenLocal()
     mavenCentral()
-    maven { url "http://repo.md-5.net/content/groups/public/" }
+    maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" } //Says snapshots but is the official repo for building plugins against
+    maven { url "https://raw.github.com/rlf/uSkyBlock/mvn-repo/" }
 }
 
 
@@ -32,21 +33,26 @@ repositories {
 }
 
 dependencies {
+    compile group: 'org.spigotmc', name: 'spigot-api', version: '1.11-R0.1-SNAPSHOT' //Spigot (Bukkit for Minecraft 1.9+) API
     testCompile group: 'junit', name: 'junit', version: '4.8.2'
-   /* testCompile group: 'org.mockito', name: 'mockito-core', version: '1.9.+', transitive: false*/
-    testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.4.9'
-    testCompile group: 'org.powermock', name: 'powermock-api-mockito', version: '1.4.9'
-    compile name: 'spigot'
+    testCompile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.4.12'
+    testCompile group: 'org.powermock', name: 'powermock-api-mockito', version: '1.4.12'
+    testCompile group: 'org.javassist', name: 'javassist', version: '3.18.2-GA'
 }
 
 task generateApiDocs(type: Javadoc) {
     classpath = project.sourceSets.main.compileClasspath
     source(sourceSets.main.allJava)
-    includes = ["me/eddie/inventoryguiapi/**"]
+    exclude("me/eddie/inventoryguiapi/plugin")
+    exclude("me/eddie/inventoryguiapi/language")
+    exclude("me/eddie/inventoryguiapi/listeners")
+    exclude("me/eddie/inventoryguiapi/examples")
+
     destinationDir = reporting.file("javadocs")
 }
 
 jar {
     // Keep jar clean:
     exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
+    /*exclude 'me/eddie/inventoryguiapi/examples'*/
 }

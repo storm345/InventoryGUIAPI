@@ -3,7 +3,6 @@ package me.eddie.inventoryguiapi.language;
 import java.util.Formatter;
 import java.util.Locale;
 import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
 
 /**
  * Created by Edward on 28/12/2016.
