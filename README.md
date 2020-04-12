@@ -1,5 +1,5 @@
 # InventoryGUIAPI
-Advanced Minecraft GUI Library/API, built on top of Bukkit
+The most advanced Minecraft GUI Library/API, built on top of the Bukkit/Spigot API
 
 # Examples
 View examples of how to use the API at https://github.com/storm345/InventoryGUIAPI/tree/master/src/main/java/me/eddie/inventoryguiapi/examples
